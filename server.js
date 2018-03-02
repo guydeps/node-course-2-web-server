@@ -1,3 +1,4 @@
+const port = process.env.port || 3000;
 const express = require('express');
 const hbs = require('hbs');
 var app = express();
@@ -33,4 +34,6 @@ app.get('/bad', function (req, res) {
     //res.send({ error: "not working", reason: "some reason" });    
 });
 
-app.listen(3000);
+app.listen(port, ()=>{
+    console.log('Server is up on port '+port);
+});
